@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html ng-app="gdpcx">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <title></title>
+</head>
+<body ng-controller="gdpcxCtrl">
+    <div class="searchBox">
+        <select ng-model="year" class="form-control">
+            <option value="">请选择年份</option>
+            <option value="2009">2009年</option>
+            <option value="2010">2010年</option>
+            <option value="2011">2011年</option>
+            <option value="2012">2012年</option>
+            <option value="2013">2013年</option>
+            <option value="2014">2014年</option>
+            <option value="2015">2015年</option>
+            <option value="2016">2016年</option>
+        </select>
+        <button ng-click="yearCheck(year)" class="btn trig">查&nbsp;询</button>
+    </div>
+    <div class="mainTable">
+        <table class="table table-bordered">
+            <tr>
+                <th></th>
+                <th>SSND</th>
+                <th>SSMC</th>
+                <th>GDP</th>
+                <th>GTAX</th>
+                <th>DTAX</th>
+            </tr>
+            <tr ng-repeat="a in gdpData" data-toggle="modal" data-target="#gdpsg" ng-click="cxiabiao($index)">
+                <td ng-bind="$index+1"></td>
+                <td ng-bind="a.ssnd" ng-model="oldSSND"></td>
+                <td ng-bind="a.ssmc" ng-model="oldSSMC"></td>
+                <td ng-bind="a.gdp" ng-model="oldGDP"></td>
+                <td ng-bind="a.gtax" ng-model="oldGTAX"></td>
+                <td ng-bind="a.dtax" ng-model="oldDTAX"></td>
+            </tr>
+        </table>
+        <button data-toggle="modal" data-target="#gdpadd" class="btn">增加一行</button>
+    </div>
+    <div class="modal fade" id="gdpadd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">请填写数据</div>
+                <div class="modal-body">
+                    <table class="modalTable">
+                        <tr>
+                            <th>SSND</th>
+                            <th>SSMC</th>
+                            <th>GDP</th>
+                            <th>GTAX</th>
+                            <th>DTAX</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select type="text" ng-model="newSSND">
+                                    <option>请选择</option>
+                                    <option>2009</option>
+                                    <option>2010</option>
+                                    <option>2011</option>
+                                    <option>2012</option>
+                                    <option>2013</option>
+                                    <option>2014</option>
+                                    <option>2015</option>
+                                    <option>2016</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select type="text" ng-model="newSSMC">
+                                    <option>请选择</option>
+                                    <option>北京市</option>
+                                    <option>广东省</option>
+                                    <option>江苏省</option>
+                                    <option>山东省</option>
+                                    <option>上海市</option>
+                                    <option>浙江省</option>
+                                </select>
+                            </td>
+                            <td><input type="text" ng-model="newGDP"/></td>
+                            <td><input type="text" ng-model="newGTAX"/></td>
+                            <td><input type="text" ng-model="newDTAX"/></td>
+                        </tr>
+                    </table>
+                    <div class="btns">
+                        <button class="btn" ng-click="addNew()" data-dismiss="modal">保 存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="gdpsg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">请填写数据</div>
+                <div class="modal-body">
+                    <table class="modalTable">
+                        <tr>
+                            <th>SSND</th>
+                            <th>SSMC</th>
+                            <th>GDP</th>
+                            <th>GTAX</th>
+                            <th>DTAX</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select type="text" ng-model="curGdp.ssnd">
+                                    <option>请选择</option>
+                                    <option>2009</option>
+                                    <option>2010</option>
+                                    <option>2011</option>
+                                    <option>2012</option>
+                                    <option>2013</option>
+                                    <option>2014</option>
+                                    <option>2015</option>
+                                    <option>2016</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select type="text" ng-model="curGdp.ssmc">
+                                    <option>请选择</option>
+                                    <option>北京市</option>
+                                    <option>广东省</option>
+                                    <option>江苏省</option>
+                                    <option>山东省</option>
+                                    <option>上海市</option>
+                                    <option>浙江省</option>
+                                </select>
+                            </td>
+                            <td><input type="text" ng-model="curGdp.gdp"/></td>
+                            <td><input type="text" ng-model="curGdp.gtax"/></td>
+                            <td><input type="text" ng-model="curGdp.dtax"/></td>
+                        </tr>
+                    </table>
+                    <div class="btns">
+                        <button class="btn" ng-click="revise()" data-dismiss="modal">保 存</button>
+                        <button class="btn" ng-click="remove()" data-dismiss="modal">删 除</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

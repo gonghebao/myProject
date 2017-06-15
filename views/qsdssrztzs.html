@@ -1,0 +1,27 @@
+<div class="qsdssr">
+    <div class="year">
+        <select ng-change="changeYear()" ng-model="selectedYear" ng-options = "year for year in years"></select>
+        <button class="turn" ng-click="lunboTurn()">轮播 <img style="width: 20px; height: 18px;vertical-align: middle" ng-src="{{imgSrc}}" alt=""/></button>
+    </div>
+    <div class="leftBox" id="qsdssrMap"></div>
+    <div class="rightBox qsdssrBox">
+        <ul>
+            <li>
+                <p>地税组织收入(万元)</p>
+                <p>{{totalViewData.qszzsr/10000 | number:2}}</p>
+            </li>
+            <li>
+                <p>税收收入(万元)</p>
+                <p>{{totalViewData.qssssr/10000 | number:2}}</p>
+            </li>
+            <li>
+                <p>非税收收入(万元)</p>
+                <p>{{totalViewData.qsfsssr/10000 | number:2}}</p>
+            </li>
+            <li>
+                <p>社保基金收入(万元)</p>
+                <p>{{totalViewData.qssbjj/10000 | number:2}}</p>
+            </li>
+        </ul>
+    </div>
+</div>

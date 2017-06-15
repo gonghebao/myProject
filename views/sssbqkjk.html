@@ -1,0 +1,48 @@
+<div class="sssb">
+    <div class="leftBox" id="sssbMap"></div>
+    <div class="pointBox"></div>
+    <div class="rightBox">
+        <div class="sssbBox">
+            <div class="drsb">
+                <ul>
+                    <li>
+                        <p class="data numberRun_ss_yuan">{{www | number: 2}}</p>
+                        <p class="dw">元</p>
+                    </li>
+                    <li>
+                        <p class="data numberRun_ss_bi">{{index_2}}</p>
+                        <p class="dw">笔</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="sssbData">
+                <p class="title">实时申报</p>
+
+                <div class="scroll_container">
+                    <!-- <ul ng-repeat="company in companyData">
+                         <li class="mc">{{company.qymc}}</li>
+                         <li class="sz">{{company.zspm}}</li>
+                         <li class="je">{{company.sbje}}<span>元</span></li>
+                     </ul>-->
+                    <ul class="ul-1" style="top:0">
+                        <li ng-repeat="n in companyData1"><span class="dq" title="{{n.qymc}}">{{n.qymc}}</span><span
+                                class="hs"><i
+                                ng-class="{red:carr[$index%carr.length]=='red',blue:carr[$index%arr.length]=='blue',yellow:carr[$index%carr.length]=='yellow',green:carr[$index%carr.length]=='green',gray:carr[$index%carr.length]=='gray',purple:carr[$index%carr.length]=='purple',lightgreen:carr[$index%carr.length]=='lightgreen',darkorange:carr[$index%carr.length]=='darkorange',skyblue:carr[$index%carr.length]=='skyblue',pink:carr[$index%carr.length]=='pink'}"></i>{{n.zspm}}</span><span
+                                class="bfb">{{n.sbje1 | number: 2}}元</span></li>
+                    </ul>
+                    <ul class="ul-2" style="top:360px;position:absolute">
+                        <li ng-repeat="n in companyData2"><span class="dq" title="{{n.qymc}}">{{n.qymc}}</span><span
+                          class="hs"><i
+                          ng-class="{red:carr[$index%carr.length]=='red',blue:carr[$index%arr.length]=='blue',yellow:carr[$index%carr.length]=='yellow',green:carr[$index%carr.length]=='green',gray:carr[$index%carr.length]=='gray',purple:carr[$index%carr.length]=='purple',lightgreen:carr[$index%carr.length]=='lightgreen',darkorange:carr[$index%carr.length]=='darkorange',skyblue:carr[$index%carr.length]=='skyblue',pink:carr[$index%carr.length]=='pink'}"></i>{{n.zspm}}</span><span
+                          class="bfb">{{n.sbje1 | number: 2}}元</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="sssb_canvas"></div>
+        <div class="sssb_btn">
+            <button id="yue">月</button>
+            <button id="ri">日</button>
+        </div>
+    </div>
+</div>

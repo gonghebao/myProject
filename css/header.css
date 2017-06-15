@@ -1,0 +1,56 @@
+.more {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    vertical-align: top;
+}
+.topBox {
+    box-sizing: border-box;
+    position:absolute;
+    top: 0;
+    left: 0;
+    height: 2.6rem;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    z-index: 10;
+}
+.topBox .title{
+    display: inline-block;
+}
+.topBox span{
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #1091ff;
+}
+.navBox{
+    text-align: right;
+    float: right;
+    /*margin:10px 20px 0 0;*/
+}
+.navBox ul{
+    float:left;
+}
+.navBox span{
+    float:right;
+    color:#307fd2;
+    font-size:0.9rem;
+    font-weight:700;
+    letter-spacing:0.05rem;
+}
+.navBox span img{
+    width:0.85rem;
+    height:0.7rem;
+    margin:0 0.5rem -0.1rem 2rem;
+    cursor:pointer;
+
+}
+.navBox ul li{
+    display: inline;
+}
+.navBox ul li:hover{
+    cursor: pointer;
+}
+.navBox ul li:nth-child(2){
+    margin: 0 0.6rem;
+}

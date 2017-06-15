@@ -1,0 +1,44 @@
+<div id="large-header" style="position:absolute">
+    <canvas id="demo-canvas" style="position:absolute"></canvas>
+</div>
+<div class="fcjy">
+    <div>
+        <div class="dqList">
+            <select ng-change="changeDq()" ng-model="selectedDq" ng-options = " key as value for (key, value) in dqData"></select>
+        </div>
+        <div id="fcjyMap1" class="leftBox"></div>
+    </div>
+    <!--<div class="line">-->
+       <!--<ul>-->
+           <!--<li>分时</li>-->
+           <!--<li>五日</li>-->
+           <!--<li>一年</li>-->
+           <!--<li>日k</li>-->
+           <!--<li>周k</li>-->
+           <!--<li>月k</li>-->
+           <!--<li>5分</li>-->
+           <!--<li>15分</li>-->
+           <!--<li>30分</li>-->
+           <!--<li>60分</li>-->
+           <!--<li id="sj">2016-07-12 09:02</li>-->
+       <!--</ul>-->
+    <!--</div>-->
+    <div class="line_2"></div>
+    <div id="fcjyMap2" class="rightBox">
+        <div>
+            <div class="d1" ng-class="{up: pjjgFlag, down: !pjjgFlag}">
+                <span >{{pjjg | number: 2}}</span><b ng-if="pjjgFlag"> ↑</b><b ng-if="!pjjgFlag"> ↓</b>
+            </div>
+            <ul class="u1">
+                <li><span><b class="fcjy_jk">今 开：</b><i>{{curData.kpj | number: 2}}元</i></span><span><b class="fcjy_jk">成交量：</b><i>{{curData.cjl}}套</i></span></li>
+                <li><span><b class="fcjy_jk">最 高：</b><i>{{curData.zgj | number: 2}}元</i></span><span><b class="fcjy_jk">成交额：</b><i>{{curData.cje / 10000 | number: 2}}万元</i></span></li>
+                <li><span><b class="fcjy_jk">最 低：</b><i>{{curData.zdj | number: 2}}元</i></span><span><b class="fcjy_jk">税收收入：</b><i>{{curData.sssr / 10000 | number: 2}}万元</i></span></li>
+                <li></li>
+            </ul>
+            <ul class="u2" ng-repeat="item in viewListData">
+                <li class="title" ng-if="$index == 0"><span>时间</span><span>单价</span><span>总价</span></li>
+                <li><span>{{item.czrq}}</span><span>{{item.pjjg | number: 2}}元</span><span>{{item.zje/10000 | number: 2}}万元</span></li>
+            </ul>
+        </div>
+    </div>
+</div>

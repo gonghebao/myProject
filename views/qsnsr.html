@@ -1,0 +1,19 @@
+<div class="qsnsr">
+    <div class="leftBox"></div>
+    <div class="pointBox"></div>
+    <div class="rightBox">
+        <div class="qsnsrData">
+            <div class="qsnsrTitle">
+                <p>纳税人登记注册户数</p>
+                <p>{{count | number:0}} 户</p>
+            </div>
+            <div class="qsnsrDataDetail">
+                <ul id="mysrocll" style="width:auto; overflow:hidden;padding:10px; line-height:1.5;">
+                    <li ng-repeat="city in citydata"><span class="dq">{{city.swj}}</span><span class="hs"><span>{{city.hs}}</span>户</span><span class="bfb">{{city.hs/count*100 | number:2}}%</span></li>
+                </ul>
+                <div id="divInfo" style=""></div>
+                <!-- 滚动条-->
+            </div>
+        </div>
+    </div>
+</div>

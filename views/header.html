@@ -1,0 +1,14 @@
+<div class="topBox">
+    <div class="title">
+        <img class="more" src="imges/hanber@2.png"  ng-click="addOn()"/>
+        <span>{{titles[$state.current.name]}}</span>
+    </div>
+    <div class="navBox">
+        <ul>
+            <li><a ng-click="changeState(0)"><img src="imges/images/home_left.png"></a></li>
+            <li><a ui-sref="index"><img src="imges/images/home.png"></a></li>
+            <li><a ng-click="changeState(1)"><img src="imges/images/home_right.png"></a></li>
+        </ul>
+        <span ng-click="launchFullScreen()"><img src="imges/full@2.png" class="fullImg"/>全屏</span>
+    </div>
+</div>

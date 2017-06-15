@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dtzsApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="gdpInfo/index.css"/>
+    <!--<link rel="stylesheet" href="css/default.css">-->
+    <script src="js/jquery.js"></script>
+    <!--<script src="js/bootstrap.min.js"></script>-->
+    <!--<script src="service/prefixfree.min.js"></script>-->
+    <!--<script src="service/index.js"></script>-->
+    <script src="js/echarts.js"></script>
+    <script src="js/echarts3.js"></script>
+    <!--<script src="js/registerMaps.js"></script>-->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/highcharts-3d.js"></script>
+    <!--<script src="js/esl.js"></script>-->
+    <script src="js/gg.js"></script>
+    <!--<script src="js/shubiao.js"></script>-->
+
+    <style>
+        /*#header {*/
+            /*position: relative;*/
+        /*}*/
+        /*.more_info_close {*/
+            /*position: absolute;*/
+            /*left: 340px;*/
+            /*top: 348px;*/
+            /*color: #2269ce;*/
+            /*border-radius: 50%;*/
+            /*padding: 5px;*/
+            /*font-weight: bold;*/
+            /*font-size: 20px;*/
+        /*}*/
+        /*/!*.mt-number-animate{ font-family: '微软雅黑'; line-height:20px; height: 20px;/!*设置数字显示高度*!/; font-size: 36px;/!*设置数字大小*!/ overflow: hidden; display: inline-block; position: relative; }*!/*/
+        /*/!*.mt-number-animate .mt-number-animate-dot{ width: 10px;/!*设置分割符宽度*!/ line-height: 20px; float: left; text-align: center;}*!/*/
+        /*/!*.mt-number-animate .mt-number-animate-dom{ width: 20px;/!*设置单个数字宽度*!/ text-align: center; float: left; position: relative; top: 0;}*!/*/
+        /*/!*.mt-number-animate .mt-number-animate-dom .mt-number-animate-span{ width: 100%; float: left;}*!/*/
+        /*.mt-number-animate{ font-family: 'Arial'; line-height:1.5rem; height: 1.5rem;/!*设置数字显示高度*!/; font-size: 36px;/!*设置数字大小*!/ overflow: hidden; display: inline-block; position: relative; }*/
+        /*.mt-number-animate .mt-number-animate-dot{ width: 20px;/!*设置分割符宽度*!/ line-height: 30px; float: left; text-align: center;}*/
+        /*.mt-number-animate .mt-number-animate-dom{ width: 20px;/!*设置单个数字宽度*!/ text-align: center; float: left; position: relative; top: 0;}*/
+        /*.mt-number-animate .mt-number-animate-dom .mt-number-animate-span{ width: 100%; float: left;}*/
+    </style>
+</head>
+<body class="other-bg">
+<div ui-view="header"></div>
+<div ui-view="main"></div>
+<div uic-alert></div>
+<canvas id="cvs" ng-class="{cvsShow: cvs}"></canvas>
+<div class="more_info" ng-class="{on: isShow}" ng-mouseleave="removeOn()">
+    <div class="more_info_close" ng-click="removeOn()">&lt;&lt;</div>
+    <div class="more_detail">
+        <dl >
+            <dt><a ui-sref="qsnsr" ><img src="imges/01.png"/></a></dt>
+            <dd>全省纳税人登记注册情况</dd>
+        </dl>
+        <dl>
+            <dt><a ui-sref="nsrdj"><img src="imges/02.png"/></a></dt>
+            <dd>纳税人登记注册情况年度对比</dd>
+        </dl>
+        <dl>
+            <dt><a ui-sref="dssr"><img src="imges/03.png"/></a></dt>
+            <dd>地税收入年度对比</dd>
+        </dl>
+        <dl>
+            <dt><a ui-sref="fszsr"><img src="imges/fszsrqk.jpg"/></a></dt>
+            <dd>分税种收入情况</dd>
+        </dl>
+        <dl>
+            <dt><a ui-sref="sssb"><img src="imges/05.png"/></a></dt>
+            <dd>实时申报情况监控</dd>
+        </dl>
+        <dl>
+            <!--<dt><a href="views/tesexiaoz.html"><img src="imges/tesexiaozhen.jpg"/></a></dt>-->
+            <dt><a ui-sref="tsxz"><img src="imges/tesexiaozhen.jpg"/></a></dt>
+            <dd>特色小镇</dd>
+        </dl>
+        <dl>
+            <dt><a ui-sref="qsdssr"><img src="imges/07.png"/></a></dt>
+            <dd>全省地税收入整体展示</dd>
+        </dl>
+        <dl>
+            <dt><a ui-sref="srpm"><img src="imges/09.png"/></a></dt>
+            <dd>地区收入排名</dd>
+        </dl>
+        <dl>
+            <dt><a ui-sref="wbmlw"><img src="imges/wbmlw11.jpg"/></a></dt>
+            <dd>外部门联网</dd>
+        </dl>
+        <dl>
+            <dt><a ui-sref="fhysr"><img src="imges/08.png"/></a></dt>
+            <dd>分行业收入情况</dd>
+        </dl>
+        <dl>
+            <dt><a ui-sref="ssgdp"><img src="imges/gdp.jpg"/></a></dt>
+            <dd>部分省市GDP与税收对比</dd>
+        </dl>
+
+        <dl>
+            <dt><a ui-sref="fcjy"><img src="imges/06.png"/></a></dt>
+            <dd>房产交易情况展示</dd>
+        </dl>
+    </div>
+</div>
+<!--<script src="js/index.js"></script>-->
+<script src="./bundle.js"></script>
+<script  src="service/alert.js"></script>
+<script src="js/main.js"></script>
+<script src="js/section/fhysrqk/fhysrqk.js"></script>
+<!--<script src="js/section/wbmlw/wbmlw.js"></script>-->
+<!--<script src="js/section/qsdssrztzs/qsdssrztzs.js"></script>-->
+<!--<script src="js/section/sssbqkjk/sssbqkjk.js"></script>-->
+<script src="js/section/sssbqkjk/sssbqkjk_222.js"></script>
+<!--<script src="js/section/sssbqkjk/sssbqkjk_echarts2.js"></script>-->
+<!--<script src="js/section/tesexiaoz/tesexiaoz.js"></script>-->
+<!--<script src="js/section/fcjyqkzs/fcjyqkzs.js"></script>-->
+<!--<script src="js/section/ssgdp/ssgdp.js"></script>-->
+<!--<script src="gdpInfo/index.js"></script>-->
+<script src="js/section/qsnsr/qsnsr_data.js"></script>
+<script src="js/section/qsnsr/qsnsr.js"></script>
+<!--<script src="js/section/nsrdjzcqknddb/nsrdjzcqknddb.js"></script>-->
+<script src="js/section/dssrnddb/dssrnddb.js"></script>
+<script src="js/section/dqsrpm/dqsrpm_new.js"></script>
+<script src="js/section/fszsrqk/fszsrqk.js"></script>
+<!--<script src="js/section/wbmlw/animateBackground-plugin.js"></script>-->
+<!--<script src="js/section/wbmlw/jq_animate.js"></script>-->
+<!--<script src="js/bg/TweenLite.min.js"></script>-->
+<!--<script src="js/bg/EasePack.min.js"></script>-->
+<!--<script src="js/word.js"></script>-->
+
+<!--<script src="js/section/wbmlw/lufylegend-1.7.7.js"></script>-->
+<!--<script src="js/section/wbmlw/Smearing.js"></script>-->
+<!--<script src="js/jquery-starfield.min.js"></script>-->
+<!--<script src="js/numberRun.js"></script>-->
+<script>
+    //数字滚动
+//    ;(function($) {
+//        $.fn.numberAnimate = function(setting) {
+//            var defaults = {
+//                speed : 1000,//动画速度
+//                num : "", //初始化值
+//                iniAnimate : true, //是否要初始化动画效果
+//                symbol : '',//默认的分割符号，千，万，千万
+//                dot : 0 //保留几位小数点
+//            };
+//            //如果setting为空，就取default的值
+//            var setting = $.extend(defaults, setting);
+//
+//            //如果对象有多个，提示出错
+//            if($(this).length > 1){
+//                alert("just only one obj!");
+//                return;
+//            }
+//
+//            //如果未设置初始化值。提示出错
+//            if(setting.num == ""){
+//                alert("must set a num!");
+//                return;
+//            }
+//            var nHtml = '<div class="mt-number-animate-dom" data-num="{{num}}">\
+//            <span class="mt-number-animate-span">1</span>\
+//            <span class="mt-number-animate-span">1</span>\
+//            <span class="mt-number-animate-span">2</span>\
+//            <span class="mt-number-animate-span">3</span>\
+//            <span class="mt-number-animate-span">4</span>\
+//            <span class="mt-number-animate-span">5</span>\
+//            <span class="mt-number-animate-span">6</span>\
+//            <span class="mt-number-animate-span">7</span>\
+//            <span class="mt-number-animate-span">8</span>\
+//            <span class="mt-number-animate-span">9</span>\
+//            <span class="mt-number-animate-span">0</span>\
+//            <span class="mt-number-animate-span">,</span>\
+//          </div>';
+//
+//            //数字处理
+//            var numToArr = function(num){
+//               // num = parseFloat(num).toFixed(setting.dot);
+//                if(typeof(num) == 'number'){
+//                    var arrStr = num.toString().split("");
+//                }else{
+//                    var arrStr = num.split("");
+//                }
+//                //console.log(arrStr);
+//                return arrStr;
+//            };
+//
+//            //设置DOM symbol:分割符号
+//            var setNumDom = function(arrStr){
+//                var shtml = '<div class="mt-number-animate">';
+//                for(var i=0,len=arrStr.length; i<len; i++){
+//                    if(i != 0 && (len-i)%3 == 0 && setting.symbol != "" && arrStr[i]!="."){
+//                        shtml += '<div class="mt-number-animate-dot">'+setting.symbol+'</div>'+nHtml.replace("{{num}}",arrStr[i]);
+//                    }else{
+//                        shtml += nHtml.replace("{{num}}",arrStr[i]);
+//                    }
+//                }
+//                shtml += '</div>';
+//                return shtml;
+//            };
+//
+//            //执行动画
+//            var runAnimate = function($parent){
+//                $parent.find(".mt-number-animate-dom").each(function() {
+//                    var num = $(this).attr("data-num");
+//                    //num = (num=="."?10:num);
+//                    num=num=="0"?10:num==","?11:num;
+//                    var spanHei = $(this).height()/12; //11为元素个数
+//                    var thisTop = -num*spanHei+"px";
+//                    if(thisTop != $(this).css("top")){
+//                        if(setting.iniAnimate){
+//                            //HTML5不支持
+//                            if(!window.applicationCache){
+//                                $(this).animate({
+//                                    top : thisTop
+//                                }, setting.speed);
+//                            }else{
+//                                $(this).css({
+//                                    'transform':'translateY('+thisTop+')',
+//                                    '-ms-transform':'translateY('+thisTop+')',   /* IE 9 */
+//                                    '-moz-transform':'translateY('+thisTop+')',  /* Firefox */
+//                                    '-webkit-transform':'translateY('+thisTop+')', /* Safari 和 Chrome */
+//                                    '-o-transform':'translateY('+thisTop+')',
+//                                    '-ms-transition':setting.speed/1000+'s',
+//                                    '-moz-transition':setting.speed/1000+'s',
+//                                    '-webkit-transition':setting.speed/1000+'s',
+//                                    '-o-transition':setting.speed/1000+'s',
+//                                    'transition':setting.speed/1000+'s'
+//                                });
+//                            }
+//                        }else{
+//                            setting.iniAnimate = true;
+//                            $(this).css({
+//                                top : thisTop
+//                            });
+//                        }
+//                    }
+//                });
+//            };
+//
+//            //初始化
+//            var init = function($parent){
+//                //初始化
+//                $parent.html(setNumDom(numToArr(setting.num)));
+//                runAnimate($parent);
+//            };
+//
+//            //重置参数
+//            this.resetData = function(num){
+//                var newArr = numToArr(num);
+//                var $dom = $(this).find(".mt-number-animate-dom");
+//                if($dom.length < newArr.length){
+//                    $(this).html(setNumDom(numToArr(num)));
+//                }else{
+//                    $dom.each(function(index, el) {
+//                        $(this).attr("data-num",newArr[index]);
+//                    });
+//                }
+//                runAnimate($(this));
+//            };
+//            //init
+//            init($(this));
+//            return this;
+//        }
+//    })(jQuery);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "rap-biz-zjds-dpzs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "angular": "^1.2.30",
+    "echarts": "^3.1.10"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.2.0",
+    "html-webpack-plugin": "^2.22.0",
+    "livereload": "^0.4.1",
+    "webpack": "^1.13.1",
+    "webpack-stream": "^3.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

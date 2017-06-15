@@ -1,0 +1,87 @@
+<div class="home_bg">
+    <div id="header">
+        <div class="left">
+            <img src="imges/hanber@2.png" class="more"/>
+            <img src="imges/logo.png"/>
+        </div>
+        <div class="right">
+            <span id="localtime"></span>
+            <span ng-click="launchFullScreen()"><img src="imges/full@2.png" class="fullImg"/>全屏</span>
+        </div>
+    </div>
+    <div id="section">
+        <div id="leftdiv">
+            <div class="fresh">
+                <img src="imges/resh@2.png"/>
+            </div>
+            <ul>
+                <li>
+                    <img src="imges/dengji.png"/>
+
+                    <div class="info">
+                        <p>税务登记户数：<span><span class="int int-1">+{{ssXdjh}}</span></span></p>
+
+                        <p><span>{{djhs | number:0}}</span>户</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="imges/dishui.png"/>
+                    <div class="info">
+                        <p>地税部门组织收入：<span><span class="int int-2">+{{ssbmsr/10000 | number:2}}</span></span></p>
+                        <p><span>{{bmsr/10000 | number:2}}</span>万元</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="imges/shuiwu.png"/>
+                    <div class="info">
+                        <p>税收：<span><span class="int int-3">+{{ssshuishou/10000 | number:2}}</span></span></p>
+                        <p><span>{{shuishou/10000 | number:2}}</span>万元</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="imges/feishui.png"/>
+                    <div class="info">
+                        <p>非税收入：<span><span class="int int-4">+{{ssfeiss/10000 | number:2}}</span></span></p>
+                        <p><span>{{feiss/10000 |number:2}}</span>万元</p>
+                    </div>
+                </li>
+            </ul>
+            <div id="linecavs" style="height:260px;"></div>
+        </div>
+        <div id="centerdiv1">
+            <div id="centerdiv">
+                <div class="pointBox"></div>
+                <div id="mapcavs"></div>
+                <div class="bottomview" >
+                    <ul id="first">
+                        <li><img src="imges/no1.png"/><span class="name">{{viewSortCity[0].name}}</span><span class="f_right"><span class="value">{{viewSortCity[0].value/10000 | number:2}}</span><span class="wy">万元</span></span><span class="var1">{{frist.updown}}{{frist.varnum==0?"":frist.varnum}}</span>
+                        </li>
+                        <li class="second"><img src="imges/no2.png"/><span class="name">{{viewSortCity[1].name}}</span><span class="f_right"><span class="value">{{viewSortCity[1].value/10000 | number:2}}</span><span class="wy">万元</span></span><span class="var2">{{second.updown}}{{second.varnum==0?"":second.varnum}}</span>
+                        </li>
+                        <li><img src="imges/no3.png"/><span class="name">{{viewSortCity[2].name}}</span><span class="f_right"><span class="value">{{viewSortCity[2].value/10000 | number:2}}</span><span class="wy">万元</span></span><span class="var3">{{third.updown}}{{third.varnum==0?"":third.varnum}}</span>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="margin_1"><span class="name">{{viewSortCity[3].name}}</span><span class="f_right"><span class="value">{{viewSortCity[3].value/10000 | number:2}}</span>万元</span></li>
+                        <li class="margin_1"><span class="name">{{viewSortCity[4].name}}</span><span class="f_right"><span class="value">{{viewSortCity[4].value/10000 | number:2}}</span>万元</span></li>
+                        <li class="margin_1"><span class="name">{{viewSortCity[5].name}}</span><span class="f_right"><span class="value">{{viewSortCity[5].value/10000 | number:2}}</span>万元</span></li>
+                        <li class="margin_1"><span class="name">{{viewSortCity[6].name}}</span><span class="f_right"><span class="value">{{viewSortCity[6].value/10000 | number:2}}</span>万元</span></li>
+                    </ul>
+                    <ul>
+                        <li class="margin_1"><span class="name">{{viewSortCity[7].name}}</span><span class="f_right"><span class="value">{{viewSortCity[7].value/10000 | number:2}}</span>万元</span></li>
+                        <li class="margin_1"><span class="name">{{viewSortCity[8].name}}</span><span class="f_right"><span class="value">{{viewSortCity[8].value/10000 | number:2}}</span>万元</span></li>
+                        <li class="margin_1"><span class="name">{{viewSortCity[9].name}}</span><span class="f_right"><span class="value">{{viewSortCity[9].value /10000| number:2}}</span>万元</span></li>
+                        <li class="margin_1"><span class="name">{{viewSortCity[10].name}}</span><span class="f_right"><span class="value">{{viewSortCity[10].value/10000 | number:2}}</span>万元</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="rightdiv">
+            <h4>登记注册情况年度对比</h4>
+            <div id="rightcavs1"></div>
+            <h4 id="otherh4">分税种收入情况</h4>
+            <div id="rightcavs2"></div>
+            <div id="rightcavs3"></div>
+        </div>
+    </div>
+</div>

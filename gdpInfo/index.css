@@ -1,0 +1,52 @@
+
+.searchBox{
+    width:600px;
+    margin:50px 0 30px 50px;
+}
+.searchBox select.form-control{
+    width:400px;
+    float:left;
+}
+.searchBox .btn{
+    margin-left: 20px;
+}
+.mainTable{
+    width:600px;
+    margin-left:50px;
+}
+.mainTable table th, .mainTable table td{
+    text-align: center;
+}
+
+.modal-header{
+    font-weight: bold;
+}
+.modal-body .modalTable{
+    width: 568px;
+    margin-bottom: 20px;
+}
+.modal-body .modalTable th{
+    padding:8px;
+    text-align: center;
+}
+.modal-body .modalTable td{
+    height:35px;
+}
+.modal-body th, .modal-body td{
+    border:1px solid #ddd;
+}
+.modal-body td input, .modal-body td select{
+    border:none;
+    width:112px;
+    height:100%;
+    text-align:center;
+}
+#gdpsg .modal-body .btns{
+    margin-left:214px;
+}
+#gdpsg .modal-body .btn{
+    margin-right:20px;
+}
+#gdpadd .modal-body .btns{
+    margin-left:255px;
+}

@@ -1,0 +1,77 @@
+html{
+    font-size: 125.0%;
+    font-family: 'Tahoma 粗体', '方正小标宋简体';
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 0.7rem;
+}
+
+.leftBox{
+    width:60%;
+    height: 38rem;
+    float: left;
+    box-sizing: border-box;
+}
+.rightBox{
+    float:left;
+    width: 40%;
+    height: 38rem;
+    box-sizing: border-box;
+    padding: 4rem;
+    z-index: 5;
+}
+/*左侧导航栏相关样式*/
+.more_info_close{
+    cursor: pointer;
+}
+/*遮罩层样式*/
+.my_alert {
+    display: none;
+}
+
+.my_alert_show {
+    display: block;
+}
+
+.my_mark_bg {
+    position: fixed;
+    z-index: 1050;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000, endColorstr=#7F000000);
+}
+
+.my_mark_box {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.my_mark_box span {
+    color: #fff;
+}
+#cvs{
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /*display: none;*/
+}
+.cvsShow{
+    display: none;
+}
+/*中文字体和数字样式*/
+.cn{
+    font-family: '方正小标宋简体';
+}
+.num{
+    font-family: 'Arial';
+    color: #fff;
+}

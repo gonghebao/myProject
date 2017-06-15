@@ -1,0 +1,12 @@
+var fs = require('fs');
+var path = require('path');
+var webpack = require('webpack');
+console.log(webpack);
+//require('./esl.js');
+console.log(__dirname);
+console.log(JSON);
+//var params = require(path.join(__dirname, 'src/util/mapData/params'));
+var json = require(path.join(__dirname, 'geoJson/china-main-city/hz.json'));
+var out = fs.createWriteStream('tmp.json');
+var ipt = fs.createReadStream(path.join(__dirname, 'geoJson/china-main-city/hz.json'));
+ipt.pipe(out);

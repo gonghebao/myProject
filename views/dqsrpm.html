@@ -1,0 +1,52 @@
+<div class="srpm">
+    <div class="year">
+        <select ng-change="changeYear()" ng-model="selectedYear" ng-options = "year for year in years"></select>
+    </div>
+    <div class="srlx">
+        <select ng-change="changeSrlx()" ng-model="selectedSrlx" ng-options = "item.xmbm as item.xmmc for item in srlx"></select>
+        <button class="turn" ng-click="lunboTurn()">轮播 <img style="width: 20px; height: 18px;vertical-align: middle" ng-src="{{imgSrc}}" alt=""/></button>
+    </div>
+    <div class="leftBox" id="srpmMap"></div>
+    <div class="rightBox">
+        <div class="pmBox">
+            <div class="srBox">
+                <p>收入排名 (万元)</p>
+                <ul ng-repeat="item in ss_dada">
+                    <li><img ng-src="imges/num/{{$index < 9 ? '0' + ($index+1) : ($index+1)}}.png"><span ng-class="{dq:true,mg_left:$index>2}">{{item.name}}</span><span class="dq-value">{{item.nLj/10000 | number:2}}</span></li>
+                </ul>
+                <!--<ul>-->
+                    <!--<li><img src="imges/num/01.png"><span class="dq">{{ss_dada[0].name}}</span><span>{{ss_dada[0].sssr/10000 | number:2}}</span></li>-->
+                    <!--<li><img src="imges/num/02.png"><span class="dq">{{ss_dada[1].name}}</span><span>{{ss_dada[1].sssr/10000 | number:2}}</span></li>-->
+                    <!--<li><img src="imges/num/03.png"><span class="dq">{{ss_dada[2].name}}</span><span>{{ss_dada[2].sssr/10000 | number:2}}</span></li>-->
+                    <!--<li><img src="imges/num/04.png"><span class="dq">{{ss_dada[3].name}}</span><span>{{ss_dada[3].sssr/10000 | number:2}}</span></li>-->
+                    <!--<li><img src="imges/num/05.png"><span class="dq">{{ss_dada[4].name}}</span><span>{{ss_dada[4].sssr/10000 | number:2}}</span></li>-->
+                    <!--<li><img src="imges/num/06.png"><span class="dq">{{ss_dada[5].name}}</span><span>{{ss_dada[5].sssr/10000 | number:2}}</span></li>-->
+                    <!--<li><img src="imges/num/07.png"><span class="dq">{{ss_dada[6].name}}</span><span>{{ss_dada[6].sssr/10000 | number:2}}</span></li>-->
+                    <!--<li><img src="imges/num/08.png"><span class="dq">{{ss_dada[7].name}}</span><span>{{ss_dada[7].sssr/10000 | number:2}}</span></li>-->
+                    <!--<li><img src="imges/num/09.png"><span class="dq">{{ss_dada[8].name}}</span><span>{{ss_dada[8].sssr/10000 | number:2}}</span></li>-->
+                    <!--<li><img src="imges/num/10.png"><span class="dq">{{ss_dada[9].name}}</span><span>{{ss_dada[9].sssr/10000 | number:2}}</span></li>-->
+                    <!--<li><img src="imges/num/11.png"><span class="dq">{{ss_dada[10].name}}</span><span>{{ss_dada[10].sssr/10000 | number:2}}</span></li>-->
+                <!--</ul>-->
+            </div>
+            <div class="zfBox">
+                <p>收入增幅排名</p>
+                <ul ng-repeat="item in ss_dada_2">
+                    <li><img ng-src="imges/num/{{$index < 9 ? '0' + ($index+1) : ($index+1)}}.png"><span ng-class="{dq:true,mg_left:$index>2}">{{item.name}}</span><span class="dq-value">{{item.zf * 100 | number: 2 }}%</span></li>
+                </ul>
+                <!--<ul>-->
+                    <!--<li><img src="imges/num/01.png"><span class="dq">{{ss_dada_2[0].name}}</span><span>{{ss_dada_2[0].zf | percentage}}</span></li>-->
+                    <!--<li><img src="imges/num/02.png"><span class="dq">{{ss_dada_2[1].name}}</span><span>{{ss_dada_2[1].zf | percentage}}</span></li>-->
+                    <!--<li><img src="imges/num/03.png"><span class="dq">{{ss_dada_2[2].name}}</span><span>{{ss_dada_2[2].zf | percentage}}</span></li>-->
+                    <!--<li><img src="imges/num/04.png"><span class="dq">{{ss_dada_2[3].name}}</span><span>{{ss_dada_2[3].zf | percentage}}</span></li>-->
+                    <!--<li><img src="imges/num/05.png"><span class="dq">{{ss_dada_2[4].name}}</span><span>{{ss_dada_2[4].zf | percentage}}</span></li>-->
+                    <!--<li><img src="imges/num/06.png"><span class="dq">{{ss_dada_2[5].name}}</span><span>{{ss_dada_2[5].zf | percentage}}</span></li>-->
+                    <!--<li><img src="imges/num/07.png"><span class="dq">{{ss_dada_2[6].name}}</span><span>{{ss_dada_2[6].zf | percentage}}</span></li>-->
+                    <!--<li><img src="imges/num/08.png"><span class="dq">{{ss_dada_2[7].name}}</span><span>{{ss_dada_2[7].zf | percentage}}</span></li>-->
+                    <!--<li><img src="imges/num/09.png"><span class="dq">{{ss_dada_2[8].name}}</span><span>{{ss_dada_2[8].zf | percentage}}</span></li>-->
+                    <!--<li><img src="imges/num/10.png"><span class="dq">{{ss_dada_2[9].name}}</span><span>{{ss_dada_2[9].zf | percentage}}</span></li>-->
+                    <!--<li><img src="imges/num/11.png"><span class="dq">{{ss_dada_2[10].name}}</span><span>{{ss_dada_2[10].zf | percentage}}</span></li>-->
+                <!--</ul>-->
+            </div>
+        </div>
+    </div>
+</div>
